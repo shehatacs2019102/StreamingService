@@ -11,16 +11,25 @@ import settings from "../assets/icons-sidebar/settings.svg";
 
 const Container = styled.div`
   height: calc(100vh - 20px);
-  width: 46px;
+  width: 80px;
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: space-between;
-
   flex-flow: column wrap;
   background-color: #1e293b;
   padding: 10px 0px;
- 
+  @media (max-width: 800px) {
+    display:none;
+    height:0;
+    };`
+const Wrapper = styled.div`
+
+`;
+const TopHolder = styled(Wrapper)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const Logo = styled.img`
   width: 32px;
@@ -34,29 +43,19 @@ const Holder = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 123px;
-
   height: 48px;
   width: 48px;
   &:hover {
     background-color: #334155;
   }
 `;
-const BottomHolder = styled(Holder)`
-  align-self: flex-end;
-`;
 export default function Sidebar() {
   return (
     <Container>
-      <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+      <Wrapper>
+        <TopHolder>
           <Logo src={logo} />
-        </div>
+        </TopHolder>
 
         <Holder>
           <Icon src={home} />
@@ -76,13 +75,10 @@ export default function Sidebar() {
         <Holder>
           <Icon src={notification} />
         </Holder>
-      </div>
-
-      <div>
-        <Holder>
-          <Icon src={settings} />
-        </Holder>
-      </div>
+      </Wrapper>
+      <Holder>
+        <Icon src={settings} />
+      </Holder>
     </Container>
   );
 }
