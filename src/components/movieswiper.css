@@ -32,7 +32,9 @@
   align-self: flex-end;
   margin-left: 20px;
   margin-top: 520px;
+
 }
+
 .swiper-pagination-horizontal{
   position: absolute !important;
   left:30%!important;
@@ -45,6 +47,7 @@
   position: absolute !important;
   left:15%!important;
   bottom:0 !important;
+  
  
 }
 
@@ -58,6 +61,10 @@
   align-items: flex-start;
   border-radius: 16px;
   position: relative;
+}
+.swiper-slide:last-child{
+  width: 224px !important;
+  padding-right: 300px !important;
 }
 .swiper {
   width: 41rem;
@@ -73,5 +80,10 @@
   left:30%!important;
   bottom:0 !important;
  
+}
+.swiper-slide h3 {
+
+  display: none;
+  height: 0px;
 }
 }

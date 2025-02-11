@@ -17,6 +17,9 @@ const StudioLogo = styled.img`
   margin-left: 15px;
   position: absolute;
   align-self: flex-start;
+  @media (max-width:800px) {
+    display: none;
+  }
 `;
 export default function App() {
   const [images,setImage] = useState([
@@ -34,15 +37,17 @@ export default function App() {
       pagination={{
         dynamicBullets: true,
         clickable:true,
+        
       }}
       slideToClickedSlide={true}
       modules={[Pagination,Autoplay]}
       className="mySwiper"
       // slidesPerView={5}
       // spaceBetween={30}
-      // autoplay={{
-      //   delay:3000,
-      // }}
+       autoplay={{
+         delay:8000,
+       }}
+      disableOnInteraction= {true}
       style={{
         "--swiper-pagination-color": "#FFBA08",
         "--swiper-pagination-bullet-inactive-color": "#ffffff",
@@ -52,12 +57,18 @@ export default function App() {
       }}
       breakpoints= {{
         320:{
-          slidesPerView: 2,
-          spaceBetween: 8
+          slidesPerView: 3,
+          spaceBetween: 8,
+          pagination:false
+            
+            
+            
+          
         },
         640: {
-          slidesPerView: 3,
-          spaceBetween: 40
+          slidesPerView: 4,
+          spaceBetween: 40,
+          pagination:false
         },
         1000: {
           slidesPerView: 5,
