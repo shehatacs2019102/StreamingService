@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MovieSwiper from "../components/MovieSwiper"
 import Background from "../assets/startpage-assets/Background2.jpg";
+import logo from "../assets/startpage-assets/Netflix_2015_logo.svg";
 const Container = styled.div`
   display: flex;
   width: 100vw;
@@ -19,7 +20,9 @@ const Section1 = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
- margin-top: 20vh;
+  width: 100%;
+    height: 100%;
+ 
   &::before {
     content: "";
     position: fixed;
@@ -32,7 +35,7 @@ const Section1 = styled.div`
     background-image: url(${Background});
     /* background-size: cover; */
     background-repeat: no-repeat;
-  background-size: contain;
+    background-size: cover;
     width: 100%;
     height: 100%;
     filter: brightness(0.6);
@@ -43,6 +46,7 @@ const Section1Content = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  margin-top: 20vh;
 `;
 const Section2 = styled.div`
  margin-top: 200px;
@@ -60,11 +64,35 @@ const GetStartedButton = styled.button`
   
   
 `;
+const Logo =styled.img`
+width: 148px;
+height: 40px;
+
+`;
+const Topbar = styled.div`
+display: flex;
+width: 80%;
+/* flex-flow: row wrap; */
+justify-content: space-between;
+
+height: 5.5rem;
+padding-top: 30px;
+
+
+`;
 export default function StartPage() {
   return (
     <Container>
-      <Section1>
+
+      
+    
+    <Section1>
+    <Topbar>
+    <Logo src={logo} alt="" />
+    <Logo src={logo} alt="" />
+    </Topbar>
         <Section1Content>
+        
         <h1
             style={{
               fontSize: "3rem",
@@ -91,7 +119,7 @@ export default function StartPage() {
       
       </Section1>
       <Section2>
-        <MovieSwiper/>
+        
       </Section2>
     </Container>
   );
