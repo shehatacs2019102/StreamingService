@@ -8,14 +8,13 @@ import { useState } from "react";
 import styled from "styled-components";
 import Actionbar from "./layout/Actionbar";
 import Miniheader from "./layout/Miniheader";
+import StartPage from "./layout/StartPage";
 
 const Container = styled.div`
   display: flex;
   
-  flex-flow: row nowrap;
-  background-image: url(${cover});
-  background-repeat: no-repeat;
-  background-size: cover;
+  flex-flow: column nowrap;
+  
   height: 100vh;
   width: 100vw;
   @media (max-width: 800px) {
@@ -40,7 +39,7 @@ function App() {
   };
   return (
     <div className="App" style={{display:'relative'}}>
-      {login ? (
+      {/* {login ? (
         <Container>
           <Sidebar />
           <Miniheader />
@@ -54,7 +53,11 @@ function App() {
         </Container>
       ) : (
         <LoginPage handlelogin={handlelogin} />
-      )}
+      )} */}
+      <Container>
+        <StartPage/>
+        
+        </Container>
     </div>
   );
 }
