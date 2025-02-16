@@ -1,10 +1,9 @@
 .swiper {
-  width: calc(70% - 50px);
+  width: calc(100% - 50px);
   height: 240px;
   margin: 0px !important;
   display: flex !important;
   position: relative !important;
- 
 }
 
 .swiper-slide {
@@ -32,58 +31,50 @@
   align-self: flex-end;
   margin-left: 20px;
   margin-top: 520px;
-
 }
 
-.swiper-pagination-horizontal{
+.swiper-pagination-horizontal {
   position: absolute !important;
-  left:30%!important;
-  bottom:0 !important;
- 
+  left: 45% !important;
+  bottom: 0 !important;
 }
-@media (max-width:800px) {
+@media (max-width: 800px) {
+  .swiper-pagination-horizontal {
+    position: absolute !important;
+    left: 15% !important;
+    bottom: 0 !important;
+  }
 
-  .swiper-pagination-horizontal{
-  position: absolute !important;
-  left:15%!important;
-  bottom:0 !important;
-  
- 
-}
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    width: 112px !important;
+    height: 172px !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 16px;
+    position: relative;
+  }
+  .swiper-slide:last-child {
+    width: 224px !important;
+    padding-right: 300px !important;
+  }
+  .swiper {
+    width: 41rem;
+    height: 15rem;
+    margin: 0px !important;
+    display: flex !important;
+    position: relative !important;
+  }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  width: 112px !important;
-  height: 172px !important;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-radius: 16px;
-  position: relative;
-}
-.swiper-slide:last-child{
-  width: 224px !important;
-  padding-right: 300px !important;
-}
-.swiper {
-  width: 41rem;
-  height: 15rem;
-  margin: 0px !important;
-  display: flex !important;
-  position: relative !important;
- 
-}
-
-.swiper-pagination-horizontal{
-  position: absolute !important;
-  left:30%!important;
-  bottom:0 !important;
- 
-}
-.swiper-slide h3 {
-
-  display: none;
-  height: 0px;
-}
+  .swiper-pagination-horizontal {
+    position: absolute !important;
+    left: 30% !important;
+    bottom: 0 !important;
+  }
+  .swiper-slide h3 {
+    display: none;
+    height: 0px;
+  }
 }

@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./movieswiper.css";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/icons-mini-header/logo.svg";
 import { Pagination,Autoplay} from "swiper/modules";
 import styled from "styled-components";
 
@@ -60,10 +60,6 @@ export default function App() {
           slidesPerView: 3,
           spaceBetween: 8,
           pagination:false
-            
-            
-            
-          
         },
         640: {
           slidesPerView: 4,
@@ -73,7 +69,8 @@ export default function App() {
         1000: {
           slidesPerView: 5,
           spaceBetween: 30
-        }
+        },
+        
       }
       }
     >

@@ -159,7 +159,7 @@ export default function LoginPage(props) {
   const { handlelogin } = props;
   const handlesubmit = (e) => {
     e.preventDefault();
-    handlelogin();
+    handlelogin(e.target.id);
   };
 
   return (
@@ -176,6 +176,7 @@ export default function LoginPage(props) {
         </LoginText>
         <LoginForm
           action=""
+          id="dashboard"
           onSubmit={(e) => {
             handlesubmit(e);
           }}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/icons-mini-header/logo.svg";
 import Name from "../assets/name.svg";
 import MiniLogo from "../assets/icons-responsive-movie-page/logo.svg";
 import MiniName from "../assets/icons-responsive-movie-page/name.svg";
@@ -9,9 +9,9 @@ import Star from "../assets/star.svg";
 import play from "../assets/play.svg";
 import moreinfo from "../assets/moreinfo.svg";
 import MovieSwiper from "../components/MovieSwiper";
+
 const Container = styled.div`
   display: flex;
-  
   font-family: "Plus Jakarta Sans", serif;
   justify-content: flex-start;
   align-items: flex-start;
