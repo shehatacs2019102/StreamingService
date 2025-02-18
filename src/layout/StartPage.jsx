@@ -3,6 +3,11 @@ import styled from "styled-components";
 import Background from "../assets/startpage-assets/Background2.jpg";
 import logo from "../assets/startpage-assets/Netflix_2015_logo.svg";
 import TrendingSwiper from "../components/TrendingSwiper";
+import Download from "../assets/startpage-icons/download.svg"
+import Kids from "../assets/startpage-icons/kids.svg"
+import Tele from "../assets/startpage-icons/television.svg"
+import Mobile from "../assets/startpage-icons/mobile.svg"
+import DropDownButton from "../components/DropDownButton";
 const Container = styled.div`
   display: flex;
   width: 100vw;
@@ -122,21 +127,39 @@ color:white;
 `;
 const Card = styled.div`
 display: flex;
-flex-flow: column wrap;
-align-items: center;
+flex-flow: column nowrap;
+/* align-items: center; */
 width:190px;
 height:280px;
 padding: 10px 20px;
 border-radius: 1rem;
 background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
 
+
 `;
 const Info = styled.p`
 display: flex;
+/* align-self:flex-end;
+justify-self:flex-end; */
+font-size: 15px;
 
-font-size: 16px;
 
 `;
+const Icon = styled.img`
+
+max-height: 60px;
+max-width: 60px;
+align-self: flex-end;
+margin-top: auto;
+`;
+const dropinfo = [
+    { header: 'What is netflix', info: "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices." },
+    { header: 'how much does netflix cost', info: 'Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from EGP 100 to EGP 240 a month. No extra costs, no contracts.' },
+    { header: 'where can i watch', info: 'Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.' },
+    { header: 'how can i cancel', info: 'Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.' },
+    { header: 'what can i watch on netflix', info: 'Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.' },
+    
+  ];
 export default function StartPage(props) {
   const { handlelogin } = props;
   const handleClick = (id) => {
@@ -189,27 +212,35 @@ export default function StartPage(props) {
              <Card>
               <h2>Enjoy on your TV</h2>
               <Info>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</Info>
+              <Icon src={Tele}/>
              </Card>
              <Card>
               <h2> watch offline</h2>
               <Info>Save your favorites easily and always have something to watch.</Info>
-
+              <Icon src={Download}/>
              </Card>
              <Card>
               <h2>Watch Everywhere</h2>
               <Info>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</Info>
-
+              <Icon src={Mobile}/>
               
 
              </Card>
              <Card>
               <h2>profiles for kids</h2>
               <Info>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</Info>
-
+              <Icon src={Kids}/>
              
              </Card>
             
         </div>
+        <h2 style={{marginRight:"48%"}}>Frequently Asked Questions</h2>
+       
+       {dropinfo.map((info, i) => {
+          return (
+            <DropDownButton header={info.header} text={info.info}/>
+          );
+        })}
       </Section3>
     </Container>
   );
