@@ -1,0 +1,76 @@
+.trendingSwiper {
+  width: calc(85% - 50px);
+  height: 280px;
+  margin: 0px 0px 50px 0px !important;
+  display: flex !important;
+  position: relative !important;
+  padding: 0px 0px 0px 60px !important;
+}
+
+.trendingSwiperSlide {
+  text-align: center;
+  font-size: 18px;
+  width: 180px !important;
+  height: 268px !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 24px;
+  position: relative;
+  padding: 8px 10px;
+}
+
+.trendingSwiperImage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.trendingSwiperSlide h3 {
+  z-index: 10;
+  position: absolute;
+  align-self: flex-end;
+  justify-self: center;
+  margin-left: 20px;
+  margin-top: 520px;
+}
+
+.trendingSwiperSlide h2 {
+  align-self: center;
+  position: absolute;
+  z-index: 9999;
+  color: rgb(255, 255, 255);
+  border: 2px rgb(0, 0, 0);
+  font-size: 90px;
+  left: -10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+  background: rgb(56, 56, 56);
+  opacity: 70%;
+  height: 142px !important;
+  position: absolute;
+  justify-self: center !important;
+
+  border-radius: 0.5rem;
+  top: 87px !important;
+  padding: 0px 5px !important;
+}
+.swiper-button-next {
+  right: -0px !important;
+}
+.swiper-button-prev {
+  left: -0px !important;
+}
+@media (max-width:800px) {
+  .trendingSwiper {
+    width: calc(84% - 50px);
+    align-self: flex-start!important;
+    margin-left: 60px !important;
+
+  }
+}
