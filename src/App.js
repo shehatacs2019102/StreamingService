@@ -13,6 +13,7 @@ import joker from "./movie-posters/joker.jpg";
 const Container = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  position:relative;
   height: 100vh;
   width: 100vw;
  background:${(props)=>{return `url(${props.bgImage})`}};
@@ -47,7 +48,7 @@ function App() {
     setlogin(id);
   };
   return (
-    <div className="App" style={{ display: "relative" }}>
+    <div className="App" style={{ display: "relative"}}>
       {login === "dashboard" ? (
         <Container bgImage={bgImage}>
           <SideBar />

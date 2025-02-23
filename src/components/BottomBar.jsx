@@ -14,22 +14,22 @@ const Container = styled.div`
   @media (max-width: 800px) {
     display: flex;
     position: fixed;
-    top: 46vh;
+    top: calc(100% - 46px);
+    left: 0px;
     justify-content: center;
     align-items: center;
     z-index: 10;
     gap: 30px;
-    margin-top: 350px;
-    width: calc(100vw - 16px);
-    height: calc(80px - 33px);
+    width:  calc(100vw - 16px);
+    height: 30px;
     background-color: #000000;
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: #1e293b;
-    padding: 16px 8px;
+    padding: 8px 8px;
     box-shadow: 0px 8px 8px -4px #17171708, 0px 20px 24px -4px #17171714;
   }
-  @media (max-width: 800px) {
+  @media (max-height: 900px) {
     
   }
 `;

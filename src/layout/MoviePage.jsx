@@ -31,13 +31,14 @@ const Container = styled.div`
   color: white;
   width: calc(100% - 50px);
   margin-left: 50px;
-  gap: 32px;
+  /* gap: 32px; */
   @media (max-width: 800px) {
     width: auto;
     height: auto;
     margin-top: 40px;
     gap: 24px;
     margin-left: 16px;
+   
     
   }
   @media (max-height: 800px) {
