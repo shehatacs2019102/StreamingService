@@ -29,6 +29,9 @@ const Container = styled.div`
     padding: 16px 8px;
     box-shadow: 0px 8px 8px -4px #17171708, 0px 20px 24px -4px #17171714;
   }
+  @media (max-width: 800px) {
+    
+  }
 `;
 export default function BottomBa() {
   return (

@@ -7,7 +7,7 @@ const BannerH1 = styled.h1`
   text-align: center;
   margin-bottom: 8px;
   @media (max-width: 800px) {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 `;
 export default BannerH1
