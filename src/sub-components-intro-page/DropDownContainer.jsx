@@ -7,6 +7,12 @@ const DropDownContainer = styled.div`
     margin-left: 60px;
     width: 83%;
   }
+  @media (max-width: 690px) {
+    align-self: flex-start;
+    margin-left: 35px;
+
+    width: 83%;
+  }
 `;
 
 export default DropDownContainer;

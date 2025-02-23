@@ -8,5 +8,9 @@ const BannerH3 = styled.h3`
   @media (max-width: 800px) {
     font-size: 0.9rem;
   }
+  @media (max-width: 800px) {
+    font-size: 0.9rem;
+    align-self: center;
+  }
 `;
 export default BannerH3

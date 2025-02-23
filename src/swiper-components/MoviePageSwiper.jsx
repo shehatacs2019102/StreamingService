@@ -38,8 +38,10 @@ export default function MoviePageSwiper(props) {
     { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
     { image: require("../movie-posters/1917.jpg"), title: "1917" },
   ]);
+
   return (
     <Swiper
+    // slidesPerGroup= {}
       pagination={{
         dynamicBullets: true,
         clickable: true,
@@ -70,7 +72,7 @@ export default function MoviePageSwiper(props) {
         },
         1000: {
           slidesPerView: 5,
-          spaceBetween: 30,
+          spaceBetween: 15,
         },
       }}
     >
@@ -79,7 +81,7 @@ export default function MoviePageSwiper(props) {
           <SwiperSlide className="movieSwiperSlide">
             <StudioLogo src={Logo} alt="" />
             <h3>{image["title"]}</h3>
-            <img className="movieSwiperImage" src={image["image"]} alt="" onClick={()=>{props.setbgImage(image["image"])}} />
+            <img className="movieSwiperImage" src={image["image"]} alt="" onClick={()=>{props.setbgImage(image["image"]); props.setMovtitle(image["title"]);}} />
           </SwiperSlide>
         );
       })}

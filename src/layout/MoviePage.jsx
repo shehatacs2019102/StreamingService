@@ -40,10 +40,16 @@ const Container = styled.div`
     margin-left: 16px;
     
   }
+  @media (max-height: 800px) {
+    gap:10px;
+  }
+`;
+const Movietitle = styled.div`
+font-size: 40px;
 `;
 
-
 export default function MoviePage(props) {
+  const [movtitle, setMovtitle] = useState("joker")
   return (
     <Container>
       <AppBadge>
@@ -52,7 +58,8 @@ export default function MoviePage(props) {
         <MovieType>original</MovieType>
       </AppBadge>
       <div>
-        <MovieTitle src={title} alt="" />
+        {/* <MovieTitle src={title} alt="" /> */}
+       <Movietitle> {movtitle} </Movietitle> 
       </div>
       <MovieDetails>
         <MovieInfo>2028</MovieInfo>
@@ -80,7 +87,7 @@ export default function MoviePage(props) {
         <img src={play} alt="" />
         <img src={moreinfo} alt="" />
       </MoviePagePanel>
-      <MoviePageSwiper setbgImage={props.setbgImage} />
+      <MoviePageSwiper setbgImage={props.setbgImage} setMovtitle={setMovtitle} />
     </Container>
   );
 }

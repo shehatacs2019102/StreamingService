@@ -8,7 +8,7 @@ import styled from "styled-components";
 import BottomBar from "./components/BottomBar";
 import MiniHeader from "./components/MiniHeader";
 import IntroPage from "./layout/IntroPage";
-import blade from "./movie-posters/BLADELOGIN.jpeg";
+import joker from "./movie-posters/joker.jpg";
 
 const Container = styled.div`
   display: flex;
@@ -35,10 +35,13 @@ const Holder = styled.div`
     height: 368px;
     overflow: visible;
   }
+  @media (max-height: 800px) {
+    gap:0px;
+  }
 `;
 
 function App() {
-  const [bgImage, setbgImage] = useState({blade})
+  const [bgImage, setbgImage] = useState(joker)
   const [login, setlogin] = useState("");
   const handlelogin = (id) => {
     setlogin(id);
@@ -51,7 +54,7 @@ function App() {
           <MiniHeader />
           <Holder>
             <Header />
-            <MoviePage setbgImage={setbgImage}  />
+            <MoviePage setbgImage={setbgImage}   />
           </Holder>
           <BottomBar />
         </Container>

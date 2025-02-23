@@ -17,6 +17,11 @@ const DropDownButton = styled.button`
     background-color: rgb(85, 85, 85);
     transition: 1s;
   }
+
+  @media (max-width: 690px) {
+    padding: 18px;
+    font-size: 18px;
+  }
 `;
 
 export default DropDownButton

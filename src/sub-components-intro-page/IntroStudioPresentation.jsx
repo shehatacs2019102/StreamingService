@@ -11,5 +11,8 @@ const IntroStudioPresentation = styled.div`
   @media (max-width: 800px) {
     flex-wrap: wrap;
   }
+  @media (max-width: 690px) {
+    flex-wrap: wrap;
+  }
 `;
 export default IntroStudioPresentation

@@ -31,9 +31,9 @@ const BannerBottom = styled.div`
     background: linear-gradient(
       to right,
       rgba(33, 13, 22, 1) 16%,
-      rgba(184, 40, 105, 1),
-      rgba(229, 9, 20, 1),
-      rgba(184, 40, 105, 1),
+      #580475,
+      #628eff,
+      #8740cd,
       rgba(33, 13, 22, 1) 84%
     );
   }

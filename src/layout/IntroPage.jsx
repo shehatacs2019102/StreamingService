@@ -26,6 +26,7 @@ import DropDownButton from "../sub-components-intro-page/DropDownButton.jsx";
 import DropDownCard from "../sub-components-intro-page/DropDownCard.jsx";
 import DropDownIcon from "../sub-components-intro-page/DropDownIcon.jsx";
 import DropDownContainer from "../sub-components-intro-page/DropDownContainer.jsx";
+import Introbackground from "../sub-components-intro-page/Introbackground.jsx";
 
 const Container = styled.div`
   display: flex;
@@ -83,6 +84,8 @@ const presentation = [
     url: `${kids}`,
   },
 ];
+
+
 export default function IntroPage(props) {
   const [show, setShow] = useState(null);
   const { handlelogin } = props;
@@ -98,11 +101,12 @@ export default function IntroPage(props) {
   };
   return (
     <Container>
+      
       <Banner>
         <BannerTopBar>
-          <div style={{display:'flex', flex:'row no-wrap', alignItems:'center'}}>
+         
           <Logo type="Banner" src={logo} alt="" /> <h2>StreamOn</h2>
-          </div>
+      
          
         </BannerTopBar>
         <BannerContent>
@@ -124,6 +128,7 @@ export default function IntroPage(props) {
       </Banner>
       <BannerBottom />
       <IntroStudio>
+      <Introbackground/>
         <IntroStudioHeader>Trending Now</IntroStudioHeader>
         <TrendingSwiper />
         <IntroStudioHeader>More Reasons to Join</IntroStudioHeader>

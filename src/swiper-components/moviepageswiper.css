@@ -10,7 +10,7 @@
 .movieSwiperSlide {
   text-align: center;
   font-size: 18px;
-  width: 426px !important;
+  width: 300px !important;
   height: 240px !important;
   display: flex;
   justify-content: flex-start;
@@ -68,4 +68,8 @@
     display: none;
     height:0;
   }
+}
+@media (max-width: 1440px) {
+
+  
 }

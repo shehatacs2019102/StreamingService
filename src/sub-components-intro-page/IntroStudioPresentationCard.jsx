@@ -12,5 +12,9 @@ const IntroStudioPresentationCard = styled.div`
   @media (max-width: 800px) {
     flex-basis: 42%;
   }
+  @media (max-width: 690px) {
+    flex-basis: 90%;
+   
+  }
 `;
 export default IntroStudioPresentationCard

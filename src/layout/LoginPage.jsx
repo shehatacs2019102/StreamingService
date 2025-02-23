@@ -4,7 +4,7 @@ import Gmail from "../assets/icons-login-page/gmail.svg";
 import Facebook from "../assets/icons-login-page/facebook.svg";
 import Github from "../assets/icons-login-page/github.svg";
 import BLADERUNNER from "../movie-posters/BLADELOGIN.jpeg";
-
+import Loginbackground from "../sub-components-login-page/loginbackground"
 const Container = styled.div`
   display: flex;
   color: white;
@@ -27,11 +27,19 @@ const Container = styled.div`
     z-index: -1;
 
     display: block;
-    background-image: url(${BLADERUNNER});
+    /* background-image: linear-gradient(
+      to left,
+      rgba(33, 13, 22, 1) 16%,
+      #580475,
+      #628eff,
+      #8740cd,
+      rgba(33, 13, 22, 1) 84%
+    );; */
+    background: #17141d;
     background-size: cover;
     width: 100%;
     height: 100%;
-    filter: brightness(0.6);
+    
   }
 `;
 const WelcomeText = styled.h1`
@@ -164,6 +172,7 @@ export default function LoginPage(props) {
 
   return (
     <Container>
+      <Loginbackground/>
       <Holder>
         <WelcomeText>Welcome Back .!</WelcomeText>
         <WelcomeText2>Skip the Lag ?</WelcomeText2>
