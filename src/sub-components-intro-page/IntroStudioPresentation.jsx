@@ -15,4 +15,4 @@ const IntroStudioPresentation = styled.div`
     flex-wrap: wrap;
   }
 `;
-export default IntroStudioPresentation
+export default IntroStudioPresentation;

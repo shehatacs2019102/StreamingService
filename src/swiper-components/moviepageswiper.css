@@ -10,7 +10,7 @@
 .movieSwiperSlide {
   text-align: center;
   font-size: 18px;
-  width: 300px !important;
+  width: 400px !important;
   height: 240px !important;
   display: flex;
   justify-content: flex-start;
@@ -38,7 +38,7 @@
   left: 47%!important;
   bottom:0 !important;
 }
-@media (max-width: 800px) {
+@media (min-width: 300px) and (max-width:750px) {
 
   .movieSwiperSlide {
     text-align: center;
@@ -53,8 +53,7 @@
   }
 
   .movieSwiper {
-    margin-top:24px !important;
-    width: 359px !important;
+    width: 90vw !important;
     height: 173px !important;
     overflow-y: hidden;
   }
@@ -69,7 +68,28 @@
     height:0;
   }
 }
-@media (max-width: 1440px) {
+@media (max-width:1024px) and (min-height:600px) {
+  .movieSwiperSlide {
+    text-align: center;
+    font-size: 18px;
+    width: 300px !important;
+    height: 172px !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 16px;
+    position: relative;
+  }
 
-  
+  .movieSwiper {
+    width: 90vw !important;
+    height: 173px !important;
+    overflow-y: hidden;
+  }
+
+  .movieSwiperSlide h3 {
+    display: none;
+    height: 0px;
+  }
+
 }

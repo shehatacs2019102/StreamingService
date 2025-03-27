@@ -6,4 +6,4 @@ const IntroStudioHeader = styled.h2`
     width: 85%;
   }
 `;
-export default IntroStudioHeader
+export default IntroStudioHeader;

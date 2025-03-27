@@ -9,7 +9,6 @@ const AppBadge = styled.div`
   height: 36px;
   gap: 8px;
   @media (max-width: 800px) {
-    width: 148.75px;
     height: 26px;
     gap: 4px;
   }

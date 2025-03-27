@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-const LogoText = styled.img`
-  width: 80px;
-  height: 20px;
-  box-shadow: 0px 4px 4px 0px #00000040;
+const LogoText = styled.div`
+  font-weight: 500;
+  font-size: 25px;
   @media (max-width: 800px) {
-    width: 51.75px;
-    height: 12.75px;
+    font-size: 13px;
+  }
+  @media (min-width:768px) and (min-height:1024px) {
+    font-size: 30px;
   }
 `;
 export default LogoText;

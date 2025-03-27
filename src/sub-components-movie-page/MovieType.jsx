@@ -12,13 +12,16 @@ const MovieType = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 2px;
   @media (max-width: 800px) {
     font-size: 14px;
     line-height: 20px;
     width: 63px;
     height: 26px;
     gap: 10px;
+  }
+  @media (min-width:768px) and (min-height:1024px) {
+    font-size: 32px;
+    line-height: calc(20px / 32px);
   }
 `;
 export default MovieType;

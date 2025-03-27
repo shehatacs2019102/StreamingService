@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import React from "react";
 import search from "../assets/icons-mini-header/search.svg";
-import logo from "../assets/icons-mini-header/logo.svg";
+import logo from "../assets/logo.png";
 import Logo from "../sub-components-general/Logo";
 import HeaderPanelButton from "../sub-componenets-header/HeaderPanelButton";
 
 const Container = styled.div`
   display: none;
   height: 0;
-  @media (max-width: 800px) {
+  @media (max-width: 750px) {
     display: flex;
     justify-content: space-between;
     align-items: center;

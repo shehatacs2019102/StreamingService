@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from "../assets/startpage-assets/Logo.png";
-import cross from "../assets/startpage-icons/cross.svg";
+import logo from "../assets/logo.png"
+import cross from "../assets/icons-intro-page/cross.svg";
 import TrendingSwiper from "../swiper-components/TrendingSwiper";
-import download from "../assets/startpage-icons/download.svg";
-import kids from "../assets/startpage-icons/kids.svg";
-import tele from "../assets/startpage-icons/television.svg";
-import mobile from "../assets/startpage-icons/mobile.svg";
+import download from "../assets/icons-intro-page/download.svg";
+import kids from "../assets/icons-intro-page/kids.svg";
+import tele from "../assets/icons-intro-page/television.svg";
+import mobile from "../assets/icons-intro-page/mobile.svg";
 import Banner from "../sub-components-intro-page/Banner";
 import BannerContent from "../sub-components-intro-page/BannerContent";
 import BannerH1 from "../sub-components-intro-page/BannerH1";
@@ -26,7 +26,7 @@ import DropDownButton from "../sub-components-intro-page/DropDownButton.jsx";
 import DropDownCard from "../sub-components-intro-page/DropDownCard.jsx";
 import DropDownIcon from "../sub-components-intro-page/DropDownIcon.jsx";
 import DropDownContainer from "../sub-components-intro-page/DropDownContainer.jsx";
-import Introbackground from "../sub-components-intro-page/Introbackground.jsx";
+import IntroBackground from "../sub-components-intro-page/IntroBackground.jsx";
 
 const Container = styled.div`
   display: flex;
@@ -85,7 +85,6 @@ const presentation = [
   },
 ];
 
-
 export default function IntroPage(props) {
   const [show, setShow] = useState(null);
   const { handlelogin } = props;
@@ -101,13 +100,9 @@ export default function IntroPage(props) {
   };
   return (
     <Container>
-      
       <Banner>
         <BannerTopBar>
-         
-          <Logo type="Banner" src={logo} alt="" /> <h2>StreamOn</h2>
-      
-         
+          <Logo type="Banner" src={logo} alt="" />
         </BannerTopBar>
         <BannerContent>
           <BannerH1>Unlimited movies, TV shows, and more</BannerH1>
@@ -128,7 +123,7 @@ export default function IntroPage(props) {
       </Banner>
       <BannerBottom />
       <IntroStudio>
-      <Introbackground/>
+        <IntroBackground />
         <IntroStudioHeader>Trending Now</IntroStudioHeader>
         <TrendingSwiper />
         <IntroStudioHeader>More Reasons to Join</IntroStudioHeader>
@@ -156,9 +151,11 @@ export default function IntroPage(props) {
                 }}
               >
                 {info.header}
-                <DropDownIcon id={i} show={show} src={cross} alt=""/>
+                <DropDownIcon id={i} show={show} src={cross} alt="" />
               </DropDownButton>
-              <DropDownCard id={i} show={show}>{info.info}</DropDownCard>
+              <DropDownCard id={i} show={show}>
+                {info.info}
+              </DropDownCard>
             </DropDownContainer>
           );
         })}

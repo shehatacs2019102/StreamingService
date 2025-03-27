@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/icons-sidebar/logo.svg";
+import logo from "../assets/logo.png";
 import home from "../assets/icons-sidebar/home.svg";
 import rising from "../assets/icons-sidebar/rising.svg";
 import user from "../assets/icons-sidebar/user.svg";
@@ -21,7 +21,8 @@ const Container = styled.div`
   flex-flow: column wrap;
   background-color: #1e293b;
   padding: 10px 0px;
-  @media (max-width: 800px) {
+  z-index: 120;
+  @media (max-width: 750px) {
     display: none;
     height: 0;
   }

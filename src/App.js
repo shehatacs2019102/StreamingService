@@ -8,18 +8,18 @@ import styled from "styled-components";
 import BottomBar from "./components/BottomBar";
 import MiniHeader from "./components/MiniHeader";
 import IntroPage from "./layout/IntroPage";
-import joker from "./movie-posters/joker.jpg";
+import poster from "./movie-posters/300.jpg"
+import MovieModal from "./sub-components-movie-page/MovieModal";
 
 const Container = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  position:relative;
   height: 100vh;
   width: 100vw;
- background:${(props)=>{return `url(${props.bgImage})`}};
+  background: ${(props)=>{return `url(${props.moviePoster})`}};
   background-repeat:no-repeat;
   background-size:cover;
-  @media (max-width: 800px) {
+  @media (max-width: 750px) {
     flex-flow: column wrap;
   }
 `;
@@ -31,31 +31,36 @@ const Holder = styled.div`
   height: 100vh;
   width: calc(100vw - 80px);
   overflow: hidden;
-  @media (max-width: 800px) {
+  @media (max-width: 750px) {
     width: 375px;
     height: 368px;
     overflow: visible;
   }
-  @media (max-height: 800px) {
-    gap:0px;
+  @media (max-width:1024px) and (min-height:600px) {
+    gap:30px;
+  }
+  @media (max-width:1024px) and (min-height:800px) {
+    gap:60px;
   }
 `;
-
 function App() {
-  const [bgImage, setbgImage] = useState(joker)
   const [login, setlogin] = useState("");
+  const [moviePoster, setMoviePoster] = useState(poster);
+  const [movieTrailer,setMovieTrailer]=useState("https://www.youtube.com/embed/2zqy21Z29ps?si=IUuyzeTjUV6Ya_7w");
+  const [modalstate,setModalState]=useState(false);
   const handlelogin = (id) => {
     setlogin(id);
   };
   return (
-    <div className="App" style={{ display: "relative"}}>
+    <div className="App" style={{ display: "relative" }}>
       {login === "dashboard" ? (
-        <Container bgImage={bgImage}>
+        <Container moviePoster={moviePoster}>
+          <MovieModal modalstate={modalstate} setModalState={setModalState} movieTrailer={movieTrailer}/>
           <SideBar />
           <MiniHeader />
           <Holder>
             <Header />
-            <MoviePage setbgImage={setbgImage}   />
+            <MoviePage setMoviePoster={setMoviePoster} setModalState={setModalState} setMovieTrailer={setMovieTrailer} />
           </Holder>
           <BottomBar />
         </Container>

@@ -15,5 +15,9 @@ const MovieCategory = styled(MovieInfo)`
     letter-spacing: -0.5%;
     text-align: center;
   }
+  @media (min-width:768px) and (min-height:1024px) {
+    font-size: 25px;
+    padding: 12px 24px;
+  }
 `;
 export default MovieCategory;

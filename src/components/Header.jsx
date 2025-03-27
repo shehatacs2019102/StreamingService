@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-flow: row wrap;
   width: calc(100vw - 100px);
   padding: 0px 10px;
-  @media (max-width: 800px) {
+  @media (max-width: 750px) {
     display: none;
     height: 0;
   }

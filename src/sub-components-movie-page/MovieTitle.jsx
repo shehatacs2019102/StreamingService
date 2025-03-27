@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const MovieTitle = styled.img`
+const MovieTitle = styled.div`
+  font-size: 40px;
   @media (max-width: 800px) {
-    width: 252.5px;
-    height: 40px;
+    font-size:32px;
   }
 `;
 export default MovieTitle;

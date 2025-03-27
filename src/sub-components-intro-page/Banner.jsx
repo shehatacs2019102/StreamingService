@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Background from "../assets/startpage-assets/Background2.jpg";
+import background from "../assets/intro-page-background.jpg";
 
 const Banner = styled.div`
   color: white;
@@ -8,7 +8,6 @@ const Banner = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-
   &::before {
     content: "";
     position: fixed;
@@ -16,7 +15,7 @@ const Banner = styled.div`
     left: 0;
     right: 0;
     z-index: -2;
-    background-image: url(${Background});
+    background-image: url(${background});
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

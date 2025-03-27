@@ -1,9 +1,6 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
-import { useState } from "react";
-import logo from "../assets/icons-sidebar/logo.svg";
-import logotext from "../assets/icons-responsive-movie-page/name.svg";
-import title from "../assets/icons-responsive-movie-page/title.svg";
+import logo from "../assets/logo.png";
 import star from "../assets/icons-responsive-movie-page/star.svg";
 import play from "../assets/icons-responsive-movie-page/play.svg";
 import moreinfo from "../assets/icons-responsive-movie-page/moreinfo.svg";
@@ -21,7 +18,6 @@ import SmallScreenMovieRating from "../sub-components-movie-page/SmallScreenMovi
 import MoviePagePanel from "../sub-components-movie-page/MoviePagePanel.jsx";
 import MoviePageSwiper from "../swiper-components/MoviePageSwiper.jsx";
 
-
 const Container = styled.div`
   display: flex;
   font-family: "Plus Jakarta Sans", serif;
@@ -31,37 +27,54 @@ const Container = styled.div`
   color: white;
   width: calc(100% - 50px);
   margin-left: 50px;
-  /* gap: 32px; */
-  @media (max-width: 800px) {
-    width: auto;
+  gap: 32px;
+  @media (max-width:400px) and (max-height:882px) {
+    width:auto;
+    height:auto;
+    row-gap: calc(5px + 2vh);
+    margin-top:calc(5px + 2vh );
+    margin-left:calc(5px + 3vw );
+  }
+  @media (max-width:768px) and (min-height:844px) {
+    width:auto;
+    height:auto;
+    row-gap: calc(10px + 3vh);
+    margin-top:calc(10px + 6vh);
+    margin-left:calc(5px + 3vw);
+  }
+  @media (max:768px) and (min-height:1024px) {
+    width:100vw;
     height: auto;
-    margin-top: 40px;
-    gap: 24px;
-    margin-left: 16px;
-   
-    
+    margin-top:30px;
+    gap: 45px;
+    margin-left: 23px;
   }
-  @media (max-height: 800px) {
-    gap:10px;
+  @media (max-width:1024px) and (min-height:1366px) {
+    width:100vw;
+    height: auto;
+    margin-top:80px;
+    gap: 50px;
+    margin-left: 53px;
   }
-`;
-const Movietitle = styled.div`
-font-size: 40px;
+  @media (max-width:1024px) and (min-height:600px) {
+    gap:12px;
+  }
+  @media (max-width:1024px) and (min-height:800px) {
+    gap:20px;
+  }
 `;
 
 export default function MoviePage(props) {
-  const [movtitle, setMovtitle] = useState("joker")
+  const [movieTitle, setMovieTitle] = useState("300");
+  const {setMoviePoster,setMovieTrailer,setModalState}=props;
   return (
     <Container>
       <AppBadge>
         <Logo src={logo} alt="" />
-        <LogoText src={logotext} alt="" />
+        <LogoText>StreamFlow</LogoText>
         <MovieType>original</MovieType>
       </AppBadge>
-      <div>
-        {/* <MovieTitle src={title} alt="" /> */}
-       <Movietitle> {movtitle} </Movietitle> 
-      </div>
+      <MovieTitle>{movieTitle}</MovieTitle>
       <MovieDetails>
         <MovieInfo>2028</MovieInfo>
         <MovieInfo>82 seasons</MovieInfo>
@@ -85,10 +98,10 @@ export default function MoviePage(props) {
         Slash Group.
       </MovieDescription>
       <MoviePagePanel>
-        <img src={play} alt="" />
+        <img src={play} onClick={()=>{setModalState(true)}} alt="" />
         <img src={moreinfo} alt="" />
       </MoviePagePanel>
-      <MoviePageSwiper setbgImage={props.setbgImage} setMovtitle={setMovtitle} />
+      <MoviePageSwiper setMoviePoster={setMoviePoster} setMovieTitle={setMovieTitle} setMovieTrailer={setMovieTrailer}/>
     </Container>
-  );
+      );
 }

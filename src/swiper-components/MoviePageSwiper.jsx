@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./moviepageswiper.css";
-import Logo from "../assets/icons-mini-header/logo.svg";
+import logo from "../assets/logo.png";
 import { Pagination, Autoplay } from "swiper/modules";
 import styled from "styled-components";
 
@@ -21,32 +21,55 @@ const StudioLogo = styled.img`
   }
 `;
 export default function MoviePageSwiper(props) {
-  const [images] = useState([
-    { image: require("../movie-posters/joker.jpg"), title: "The Joker" },
-    { image: require("../movie-posters/Barbie.jpg"), title: "Barbie" },
-    { image: require("../movie-posters/300.jpg"), title: "300" },
-    { image: require("../movie-posters/darkknight.jpg"), title: "The Dark Knight" },
-    { image: require("../movie-posters/DAYBREAKERS.jpg"), title: "DAy Breakers" },
-    { image: require("../movie-posters/tron.jpg"), title: "Tron legacy" },
-    { image: require("../movie-posters/up.webp"), title: "up" },
-    { image: require("../movie-posters/manofsteel.jpg"), title: "Man Of Steel" },
-    { image: require("../movie-posters/fargo.jpg"), title: "fargo" },
-    { image: require("../movie-posters/thething.jpg"), title: "The Thing" },
-    { image: require("../movie-posters/x-men.jpg"), title: "X-MEN" },
-    { image: require("../movie-posters/wars.jpg"), title: "Star Wars" },
-    { image: require("../movie-posters/snowwhite.jpg"), title: "snow white huntsmen" },
-    { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
-    { image: require("../movie-posters/1917.jpg"), title: "1917" },
+  const [movies] = useState([
+    {
+      poster: require("../movie-posters/300.jpg"),
+      title: "300",
+      trailer: "https://www.youtube.com/embed/2zqy21Z29ps?si=IUuyzeTjUV6Ya_7w",
+    },
+    {
+      poster: require("../movie-posters/darkknight.jpg"),
+      title: "Dark Knight",
+      trailer: "https://www.youtube.com/embed/EXeTwQWrcwY?si=8KQkWv3wM17Dwa8N",
+    },
+    {
+      poster: require("../movie-posters/fargo.jpg"),
+      title: "Fargo",
+      trailer: "https://www.youtube.com/embed/ju75Sd4yAZw?si=lUx04oTLX0xK9YZW",
+    },
+    {
+      poster: require("../movie-posters/manofsteel.jpg"),
+      title: "Man Of Steel",
+      trailer: "https://www.youtube.com/embed/T6DJcgm3wNY?si=4gqZjNjawQl9s2sz",
+    },
+    {
+      poster: require("../movie-posters/snowwhite.jpg"),
+      title: "SnowWhite",
+      trailer: "https://www.youtube.com/embed/uudKJzOFGlY?si=6-wO1BwcmryiSUW0",
+    },
+    {
+      poster: require("../movie-posters/thething.jpg"),
+      title: "The Thing",
+      trailer: "https://www.youtube.com/embed/JIdw2B6zipc?si=pMwlDK7p6gou_zJZ",
+    },
+    {
+      poster: require("../movie-posters/tron.jpg"),
+      title: "Tron",
+      trailer: "https://www.youtube.com/embed/P78pl1FUXfA?si=idjKLjMo4SUYyeTs",
+    },
+    {
+      poster: require("../movie-posters/x-men.jpg"),
+      title: "X-Men",
+      trailer: "https://www.youtube.com/embed/COvnHv42T-A?si=Nm_c3IrfS5H_025E",
+    },
   ]);
-
+  const { setMovieTitle, setMoviePoster, setMovieTrailer } = props;
   return (
     <Swiper
-    // slidesPerGroup= {}
       pagination={{
         dynamicBullets: true,
         clickable: true,
       }}
-       
       slideToClickedSlide={true}
       modules={[Pagination, Autoplay]}
       className="movieSwiper"
@@ -66,22 +89,39 @@ export default function MoviePageSwiper(props) {
           slidesPerView: 3,
           spaceBetween: 8,
         },
-        640: {
+        344: {
+          slidesPerView: 3,
+          spaceBetween: 5,
+        },
+        412: {
           slidesPerView: 4,
-          spaceBetween: 40,
+          spaceBetween: 12,
+        },
+        540: {
+          slidesPerView: 5,
+          spaceBetween: 12,
         },
         1000: {
-          slidesPerView: 5,
-          spaceBetween: 15,
+          slidesPerView: 4,
+          spaceBetween: 10,
         },
       }}
     >
-      {images.map((image, i) => {
+      {movies.map((movie, i) => {
         return (
           <SwiperSlide className="movieSwiperSlide">
-            <StudioLogo src={Logo} alt="" />
-            <h3>{image["title"]}</h3>
-            <img className="movieSwiperImage" src={image["image"]} alt="" onClick={()=>{props.setbgImage(image["image"]); props.setMovtitle(image["title"]);}} />
+            <StudioLogo src={logo} alt="" />
+            <h3>{movie["title"]}</h3>
+            <img
+              className="movieSwiperImage"
+              src={movie["poster"]}
+              onClick={() => {
+                setMoviePoster(movie["poster"]);
+                setMovieTitle(movie["title"]);
+                setMovieTrailer(movie["trailer"]);
+              }}
+              alt=""
+            />
           </SwiperSlide>
         );
       })}

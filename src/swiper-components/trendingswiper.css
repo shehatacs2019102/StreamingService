@@ -66,11 +66,17 @@
 .swiper-button-prev {
   left: -0px !important;
 }
-@media (max-width:800px) {
+@media (max-width: 412px) {
   .trendingSwiper {
     width: calc(84% - 50px);
-    align-self: flex-start!important;
+    align-self: flex-start !important;
+    margin-left: 28px !important;
+  }
+}
+@media (min-width: 700px) and (max-width: 800px) {
+  .trendingSwiper {
+    width: calc(84% - 50px);
+    align-self: flex-start !important;
     margin-left: 60px !important;
-
   }
 }

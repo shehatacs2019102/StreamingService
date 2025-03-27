@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-
-
-
 const BannerContent = styled.div`
   color: white;
   display: flex;
@@ -13,4 +10,4 @@ const BannerContent = styled.div`
     margin-top: 6vh;
   }
 `;
-export default BannerContent
+export default BannerContent;

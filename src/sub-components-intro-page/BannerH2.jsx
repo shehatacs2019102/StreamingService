@@ -8,4 +8,4 @@ const BannerH2 = styled.h2`
     font-size: 1rem;
   }
 `;
-export default BannerH2
+export default BannerH2;
