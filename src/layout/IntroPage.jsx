@@ -26,7 +26,7 @@ import DropDownButton from "../sub-components-intro-page/DropDownButton.jsx";
 import DropDownCard from "../sub-components-intro-page/DropDownCard.jsx";
 import DropDownIcon from "../sub-components-intro-page/DropDownIcon.jsx";
 import DropDownContainer from "../sub-components-intro-page/DropDownContainer.jsx";
-import IntroBackground from "../sub-components-intro-page/IntroBackground.jsx";
+import IntroBackground from "../sub-components-intro-page/Introbackground.jsx";
 
 const Container = styled.div`
   display: flex;

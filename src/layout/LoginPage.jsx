@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Gmail from "../assets/icons-login-page/gmail.svg";
 import Facebook from "../assets/icons-login-page/facebook.svg";
 import Github from "../assets/icons-login-page/github.svg";
-import LoginBackground from "../sub-components-login-page/LoginBackground";
+import LoginBackground from "../sub-components-login-page/loginbackground";
 import WelcomeText from "../sub-components-login-page/WelcomeText";
 import CustomWelcomeText from "../sub-components-login-page/CustomWelcomeText";
 import LoginButton from "../sub-components-login-page/LoginButton";
