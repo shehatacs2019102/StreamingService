@@ -66,6 +66,7 @@ const Container = styled.div`
 
 export default function MoviePage(props) {
   const [movieTitle, setMovieTitle] = useState("300");
+  const [movieDescription, setMovieTDescription] = useState("300 is a 2006 American epic...");
   const {setMoviePoster,setMovieTrailer,setModalState}=props;
   return (
     <Container>
@@ -93,15 +94,13 @@ export default function MoviePage(props) {
         </SmallScreenMovieRating>
       </MovieDetails>
       <MovieDescription>
-        When a small, unsuspecting town becomes the hunting ground for a
-        malevolent entity, a group of unlikely heroes must rise — The Demonic
-        Slash Group.
+        {movieDescription}
       </MovieDescription>
       <MoviePagePanel>
         <img src={play} onClick={()=>{setModalState(true)}} alt="" />
         <img src={moreinfo} alt="" />
       </MoviePagePanel>
-      <MoviePageSwiper setMoviePoster={setMoviePoster} setMovieTitle={setMovieTitle} setMovieTrailer={setMovieTrailer}/>
+      <MoviePageSwiper setMoviePoster={setMoviePoster} setMovieTitle={setMovieTitle}  setMovieTrailer={setMovieTrailer} setMovieTDescription={setMovieTDescription}/>
     </Container>
       );
 }
