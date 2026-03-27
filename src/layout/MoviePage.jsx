@@ -67,7 +67,14 @@ const Container = styled.div`
 export default function MoviePage(props) {
   const [movieTitle, setMovieTitle] = useState("300");
   const [movieDescription, setMovieTDescription] = useState("300 is a 2006 American epic...");
+  const [movieRating, setMovieRating] = useState(5);
+  const [movieDate, setMovieDate] = useState(2008);
+  const [movieGenre, setMovieGenre] = useState("action")
   const {setMoviePoster,setMovieTrailer,setModalState}=props;
+  const stars = [];
+  for (let i = 0; i < Math.floor(movieRating); i++) {
+    stars.push(<img key={i} src={star} alt="star" />);
+  }
   return (
     <Container>
       <AppBadge>
@@ -77,16 +84,13 @@ export default function MoviePage(props) {
       </AppBadge>
       <MovieTitle>{movieTitle}</MovieTitle>
       <MovieDetails>
-        <MovieInfo>2028</MovieInfo>
-        <MovieInfo>82 seasons</MovieInfo>
-        <MovieCategory>cartoon</MovieCategory>
+        <MovieInfo>{movieDate}</MovieInfo>
+        <MovieInfo>1080p</MovieInfo>
+        <MovieCategory>{movieGenre}</MovieCategory>
         <DesktopScreenMovieRating>
-          <img src={star} alt="" />
-          <img src={star} alt="" />
-          <img src={star} alt="" />
-          <img src={star} alt="" />
-          <img src={star} alt="" />
-          4.8
+          {stars} {/* 2. Simply render the array here */}
+        {movieRating}
+
         </DesktopScreenMovieRating>
         <SmallScreenMovieRating>
           <img src={star} alt="" />
@@ -100,7 +104,7 @@ export default function MoviePage(props) {
         <img src={play} onClick={()=>{setModalState(true)}} alt="" />
         <img src={moreinfo} alt="" />
       </MoviePagePanel>
-      <MoviePageSwiper setMoviePoster={setMoviePoster} setMovieTitle={setMovieTitle}  setMovieTrailer={setMovieTrailer} setMovieTDescription={setMovieTDescription}/>
+      <MoviePageSwiper setMoviePoster={setMoviePoster} setMovieTitle={setMovieTitle}  setMovieTrailer={setMovieTrailer} setMovieTDescription={setMovieTDescription} setMovieRating={setMovieRating} setMovieDate={setMovieDate} setMovieGenre={setMovieGenre}/>
     </Container>
       );
 }
