@@ -64,10 +64,16 @@ const Container = styled.div`
   }
 `;
 
+function truncateDescription(text, maxLength) {
+  if (text.length <= maxLength) return text;
+  const cut = text.slice(0, maxLength);
+  return cut.slice(0, cut.lastIndexOf(" ")) + "...";
+}
+
 export default function MoviePage(props) {
   const [movieTitle, setMovieTitle] = useState("300");
-  const [movieDescription, setMovieTDescription] = useState("300 is a 2006 American epic...");
-  const [movieRating, setMovieRating] = useState(5);
+  const [movieDescription, setMovieTDescription] = useState("based on the 1998 Dark Horse comic book limited series of the same name by Frank Miller and Lynn Varley. The film, like its source material, is a fictionalized retelling of the Battle of Thermopylae in the Greco-Persian Wars. The plot revolves around King Leonidas (Gerard Butler)");
+  const [movieRating, setMovieRating] = useState(4.9);
   const [movieDate, setMovieDate] = useState(2008);
   const [movieGenre, setMovieGenre] = useState("action")
   const {setMoviePoster,setMovieTrailer,setModalState}=props;
@@ -98,7 +104,7 @@ export default function MoviePage(props) {
         </SmallScreenMovieRating>
       </MovieDetails>
       <MovieDescription>
-        {movieDescription}
+        {truncateDescription(movieDescription, 180)}
       </MovieDescription>
       <MoviePagePanel>
         <img src={play} onClick={()=>{setModalState(true)}} alt="" />
