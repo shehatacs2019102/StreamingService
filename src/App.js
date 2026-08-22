@@ -32,8 +32,8 @@ const Holder = styled.div`
   width: calc(100vw - 80px);
   overflow: hidden;
   @media (max-width: 750px) {
-    width: 375px;
-    height: 368px;
+    width: 100%;
+    height: auto;
     overflow: visible;
   }
   @media (max-width:1024px) and (min-height:600px) {

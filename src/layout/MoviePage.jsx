@@ -42,7 +42,7 @@ const Container = styled.div`
     margin-top:calc(10px + 6vh);
     margin-left:calc(5px + 3vw);
   }
-  @media (max:768px) and (min-height:1024px) {
+  @media (max-width:768px) and (min-height:1024px) {
     width:100vw;
     height: auto;
     margin-top:30px;

@@ -10,7 +10,7 @@ const RightDiv = styled(LeftDiv)`
   position: relative;
   @media (max-width: 800px) {
     height: 640px;
-    width: 300px;
+    width: min(300px, 90vw);
     display: flex;
   }
   &::before {

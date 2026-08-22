@@ -10,7 +10,6 @@
 .trendingSwiperSlide {
   text-align: center;
   font-size: 18px;
-  width: 180px !important;
   height: 268px !important;
   display: flex;
   justify-content: flex-start;

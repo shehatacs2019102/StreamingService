@@ -6,11 +6,16 @@ const MovieDescription = styled.div`
   display: flex;
   @media (max-width: 768px) {
     width: 343px;
-    height: 104px;
+    max-width: 100%;
+    height: auto;
     font-weight: 400;
     font-size: 16px;
     line-height: 25.6px;
     letter-spacing: 0%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   @media (min-width:768px) and (min-height:1024px) {
     font-size: 21px;
