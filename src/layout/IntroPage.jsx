@@ -51,7 +51,7 @@ const dropinfo = [
   },
   {
     header: "where can i watch",
-    info: "Watch anywhere, anytime. Sign in with your StreamOn account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.",
+    info: "Watch anywhere, anytime. Sign in with your StreamOn account to watch instantly on the web at streamon.app from your personal computer or on any internet-connected device that offers the StreamOn app, including smart TVs, smartphones, tablets, streaming media players and game consoles.",
   },
   {
     header: "how can i cancel",
@@ -59,7 +59,7 @@ const dropinfo = [
   },
   {
     header: "what can i watch on StreamOn",
-    info: "StreamOn has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.",
+    info: "StreamOn has an extensive library of feature films, documentaries, TV shows, anime, award-winning StreamOn originals, and more. Watch as much as you want, anytime you want.",
   },
 ];
 const presentation = [
