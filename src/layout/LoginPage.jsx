@@ -1,18 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import Gmail from "../assets/icons-login-page/gmail.svg";
-import Facebook from "../assets/icons-login-page/facebook.svg";
-import Github from "../assets/icons-login-page/github.svg";
 import LoginBackground from "../sub-components-login-page/loginbackground";
 import WelcomeText from "../sub-components-login-page/WelcomeText";
 import CustomWelcomeText from "../sub-components-login-page/CustomWelcomeText";
 import LoginButton from "../sub-components-login-page/LoginButton";
 import LeftDiv from "../sub-components-login-page/LeftDiv"
 import RightDiv from "../sub-components-login-page/RightDiv"
-import ORDiv from "../sub-components-login-page/ORDiv";
 import LoginForm from "../sub-components-login-page/LoginForm";
 import TextInput from "../sub-components-login-page/TextInput";
 import FormText from "../sub-components-login-page/FormText";
+
+const DemoNotice = styled.p`
+  font-size: 13px;
+  color: #aaaaaa;
+  max-width: 320px;
+  text-align: center;
+  margin-top: 16px;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -69,23 +73,12 @@ export default function LoginPage(props) {
             <label htmlFor="checkbox">Remember me</label>
           </div>
           <LoginButton type="submit">login</LoginButton>
-          <a style={{ textDecoration: "none", color: "white" }} href="url">
-            Forgot password ?
-          </a>
         </LoginForm>
-        <ORDiv>or</ORDiv>
-        <div
-          style={{
-            display: "flex",
-            alignSelf: "center",
-            gap: "18px",
-            marginTop: "10px",
-          }}
-        >
-          <img src={Gmail} alt="" />
-          <img src={Facebook} alt="" />
-          <img src={Github} alt="" />
-        </div>
+        <DemoNotice>
+          This is a portfolio demo UI only. There is no real account system —
+          nothing you type here is stored, transmitted, or checked against
+          any account.
+        </DemoNotice>
       </RightDiv>
     </Container>
   );

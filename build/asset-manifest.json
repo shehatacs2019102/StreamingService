@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/StreamingService/static/css/main.04487f8c.css",
-    "main.js": "/StreamingService/static/js/main.7bc64ae9.js",
+    "main.js": "/StreamingService/static/js/main.ee877b9f.js",
     "static/js/488.9c92ff38.chunk.js": "/StreamingService/static/js/488.9c92ff38.chunk.js",
     "static/media/x-men.jpg": "/StreamingService/static/media/x-men.382aee6ffebd1136f81d.jpg",
     "static/media/fargo.jpg": "/StreamingService/static/media/fargo.623e5a3714bf3e8c7f26.jpg",
@@ -20,7 +20,6 @@
     "static/media/settings.svg": "/StreamingService/static/media/settings.103552ccdef5e67bc5f945dfd108dde5.svg",
     "static/media/moreinfo.svg": "/StreamingService/static/media/moreinfo.fd77ee08a1e0077073b9b66e9fd26cb8.svg",
     "static/media/play.svg": "/StreamingService/static/media/play.5beaabade251e243ba093edd2a103fb0.svg",
-    "static/media/gmail.svg": "/StreamingService/static/media/gmail.b7906e43c862d399e75432f1eb94e9db.svg",
     "static/media/search.svg": "/StreamingService/static/media/search.1c0880c1c4af94238cf15010ae10bdbb.svg",
     "static/media/kids.svg": "/StreamingService/static/media/kids.8df81f64e73a2d2055c26b129bc72c90.svg",
     "static/media/user.svg": "/StreamingService/static/media/user.8a1d91262a0ca12e26d7036fb024f527.svg",
@@ -32,17 +31,15 @@
     "static/media/television.svg": "/StreamingService/static/media/television.2ecb423c0ff1a729fde62a3ec3dddf8b.svg",
     "static/media/rising.svg": "/StreamingService/static/media/rising.52619d58c371fcf7645fa840ed4f8020.svg",
     "static/media/star.svg": "/StreamingService/static/media/star.d8ad7c434b2775455cb23d37d102b2a6.svg",
-    "static/media/github.svg": "/StreamingService/static/media/github.b335d076c2a47621d992e1d4fce1e36e.svg",
     "static/media/home.svg": "/StreamingService/static/media/home.e4ddad1e10622b297431287593d53356.svg",
-    "static/media/facebook.svg": "/StreamingService/static/media/facebook.d035ff41a4b7697c891f613346380901.svg",
     "index.html": "/StreamingService/index.html",
     "static/media/cross.svg": "/StreamingService/static/media/cross.71cc17e302325ef8df300adb9b460de9.svg",
     "main.04487f8c.css.map": "/StreamingService/static/css/main.04487f8c.css.map",
-    "main.7bc64ae9.js.map": "/StreamingService/static/js/main.7bc64ae9.js.map",
+    "main.ee877b9f.js.map": "/StreamingService/static/js/main.ee877b9f.js.map",
     "488.9c92ff38.chunk.js.map": "/StreamingService/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.04487f8c.css",
-    "static/js/main.7bc64ae9.js"
+    "static/js/main.ee877b9f.js"
   ]
 }
