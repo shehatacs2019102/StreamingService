@@ -12,10 +12,14 @@ import FormText from "../sub-components-login-page/FormText";
 
 const DemoNotice = styled.p`
   font-size: 13px;
+  line-height: 1.5;
   color: #aaaaaa;
-  max-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24px;
   text-align: center;
-  margin-top: 16px;
+  align-self: center;
+  margin: 24px 0 0;
 `;
 
 const Container = styled.div`

@@ -5,11 +5,15 @@ const RightDiv = styled(LeftDiv)`
   align-content: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   gap: 5px;
-  height: 450px;
+  flex-flow: column nowrap;
+  min-height: 450px;
+  height: auto;
+  padding: 24px 0;
   width: 300px;
   position: relative;
   @media (max-width: 800px) {
-    height: 640px;
+    min-height: 640px;
+    height: auto;
     width: min(300px, 90vw);
     display: flex;
   }

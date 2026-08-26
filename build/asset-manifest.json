@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/StreamingService/static/css/main.04487f8c.css",
-    "main.js": "/StreamingService/static/js/main.ee877b9f.js",
+    "main.js": "/StreamingService/static/js/main.96fa16be.js",
     "static/js/488.9c92ff38.chunk.js": "/StreamingService/static/js/488.9c92ff38.chunk.js",
     "static/media/x-men.jpg": "/StreamingService/static/media/x-men.382aee6ffebd1136f81d.jpg",
     "static/media/fargo.jpg": "/StreamingService/static/media/fargo.623e5a3714bf3e8c7f26.jpg",
@@ -35,11 +35,11 @@
     "index.html": "/StreamingService/index.html",
     "static/media/cross.svg": "/StreamingService/static/media/cross.71cc17e302325ef8df300adb9b460de9.svg",
     "main.04487f8c.css.map": "/StreamingService/static/css/main.04487f8c.css.map",
-    "main.ee877b9f.js.map": "/StreamingService/static/js/main.ee877b9f.js.map",
+    "main.96fa16be.js.map": "/StreamingService/static/js/main.96fa16be.js.map",
     "488.9c92ff38.chunk.js.map": "/StreamingService/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.04487f8c.css",
-    "static/js/main.ee877b9f.js"
+    "static/js/main.96fa16be.js"
   ]
 }
