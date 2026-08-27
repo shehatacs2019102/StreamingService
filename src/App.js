@@ -42,6 +42,9 @@ const Holder = styled.div`
   @media (max-width:1024px) and (min-height:800px) {
     gap:60px;
   }
+  @media (min-width:1025px) and (max-height:1000px) {
+    gap:40px;
+  }
 `;
 function App() {
   const [login, setlogin] = useState("");
