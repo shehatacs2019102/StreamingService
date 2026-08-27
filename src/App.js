@@ -43,7 +43,7 @@ const Holder = styled.div`
     gap:60px;
   }
   @media (min-width:1025px) and (max-height:1000px) {
-    gap:40px;
+    gap:20px;
   }
 `;
 function App() {
