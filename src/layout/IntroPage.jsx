@@ -40,47 +40,54 @@ const Container = styled.div`
   overflow-y: visible;
 `;
 
+const DemoBanner = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid #628eff;
+`;
+
 const dropinfo = [
   {
-    header: "What is StreamOn",
-    info: "StreamOn is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+    header: "What is StreamFlow",
+    info: "StreamFlow is a front-end portfolio project: a responsive UI for browsing movies and watching their trailers. It is not a real streaming service.",
   },
   {
-    header: "how much does StreamOn cost",
-    info: "Watch StreamOn on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from EGP 100 to EGP 240 a month. No extra costs, no contracts.",
+    header: "Do I need an account",
+    info: "No. There are no accounts, sign-ups or payments. Click \"Enter Demo\" to go straight to the movie browser.",
   },
   {
-    header: "where can i watch",
-    info: "Watch anywhere, anytime. Sign in with your StreamOn account to watch instantly on the web at streamon.app from your personal computer or on any internet-connected device that offers the StreamOn app, including smart TVs, smartphones, tablets, streaming media players and game consoles.",
+    header: "Where do the trailers come from",
+    info: "Trailers are embedded YouTube videos. No movies are hosted or streamed by this project.",
   },
   {
-    header: "how can i cancel",
-    info: "StreamOn is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.",
-  },
-  {
-    header: "what can i watch on StreamOn",
-    info: "StreamOn has an extensive library of feature films, documentaries, TV shows, anime, award-winning StreamOn originals, and more. Watch as much as you want, anytime you want.",
+    header: "What was it built with",
+    info: "React, styled-components, React Router and Swiper, with a responsive layout for desktop, tablet and mobile.",
   },
 ];
 const presentation = [
   {
-    header: "Enjoy on your TV",
-    info: "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,Blu-ray players, and more.",
+    header: "Responsive layout",
+    info: "Adapts from large desktop screens down to phones.",
     url: `${tele}`,
   },
   {
-    header: "watch offline",
-    info: "Save your favorites easily and always have something to watch.",
+    header: "Trailer previews",
+    info: "Pick a movie to change the backdrop and open its trailer.",
     url: `${download}`,
   },
   {
-    header: "Watch Everywhere",
-    info: "Stream unlimited movies and TV shows on your phone, tablet,laptop, and TV.",
+    header: "Mobile navigation",
+    info: "A bottom bar and compact header on small screens.",
     url: `${mobile}`,
   },
   {
-    header: "profiles for kids",
-    info: "Send kids on adventures with their favorite characters in a space made just for them — free with your membership.",
+    header: "Category browsing",
+    info: "Swipe through trending titles and genres.",
     url: `${kids}`,
   },
 ];
@@ -100,25 +107,29 @@ export default function IntroPage(props) {
   };
   return (
     <Container>
+      <DemoBanner>
+        Portfolio demo project — not a real streaming service. No accounts,
+        no sign-up, no payments.
+      </DemoBanner>
       <Banner>
         <BannerTopBar>
           <Logo type="Banner" src={logo} alt="" />
         </BannerTopBar>
         <BannerContent>
-          <BannerH1>Unlimited movies, TV shows, and more</BannerH1>
-          <BannerH2>Starts at 15 USD. Cancel anytime.</BannerH2>
+          <BannerH1>StreamFlow</BannerH1>
+          <BannerH2>A movie-browsing UI demo</BannerH2>
           <BannerH3>
-            Ready to watch? Enter your email to create or restart your
-            membership.
+            A front-end portfolio project built with React. Browse titles and
+            watch trailers.
           </BannerH3>
         </BannerContent>
         <GetStartedButton
-          id="login"
+          id="dashboard"
           onClick={(e) => {
             handleClick(e.target.id);
           }}
         >
-          Get Started
+          Enter Demo
         </GetStartedButton>
       </Banner>
       <BannerBottom />
@@ -126,7 +137,7 @@ export default function IntroPage(props) {
         <IntroBackground />
         <IntroStudioHeader>Trending Now</IntroStudioHeader>
         <TrendingSwiper />
-        <IntroStudioHeader>More Reasons to Join</IntroStudioHeader>
+        <IntroStudioHeader>Features</IntroStudioHeader>
         <IntroStudioPresentation>
           {presentation.map((card) => {
             return (

@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import MoviePage from "./layout/MoviePage";
-import LoginPage from "./layout/LoginPage";
 import { useState } from "react";
 import styled from "styled-components";
 import BottomBar from "./components/BottomBar";
@@ -67,8 +66,6 @@ function App() {
           </Holder>
           <BottomBar />
         </Container>
-      ) : login === "login" ? (
-        <LoginPage handlelogin={handlelogin} />
       ) : (
         <IntroPage handlelogin={handlelogin} />
       )}
