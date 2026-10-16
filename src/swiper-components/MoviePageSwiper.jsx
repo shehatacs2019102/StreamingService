@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -7,6 +7,7 @@ import "./moviepageswiper.css";
 import logo from "../assets/logo.png";
 import { Pagination, Autoplay } from "swiper/modules";
 import styled from "styled-components";
+import { apiEnabled, fetchMovies } from "../api";
 
 const StudioLogo = styled.img`
   z-index: 10;
@@ -21,7 +22,7 @@ const StudioLogo = styled.img`
   }
 `;
 export default function MoviePageSwiper(props) {
-  const [movies] = useState([
+  const [movies, setMovies] = useState([
     {
       poster: require("../movie-posters/300.jpg"),
       title: "300",
@@ -92,6 +93,12 @@ genre:"sci-fi"},
   date:2004,
 genre:"super hero"},
   ]);
+  useEffect(() => {
+    if (!apiEnabled) return;
+    fetchMovies()
+      .then(setMovies)
+      .catch((err) => console.warn("Using bundled movies:", err.message));
+  }, []);
   const { setMovieTitle, setMoviePoster, setMovieTrailer, setMovieTDescription, setMovieRating , setMovieDate ,setMovieGenre } = props;
   return (
     <Swiper

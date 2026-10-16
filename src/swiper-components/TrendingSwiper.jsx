@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -7,9 +7,10 @@ import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
+import { apiEnabled, fetchTrending } from "../api";
 
 export default function TrendingSwiper() {
-  const [images] = useState([
+  const [images, setImages] = useState([
     { image: require("../movie-posters/joker.jpg"), title: "The Joker" },
     { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
     { image: require("../movie-posters/1917.jpg"), title: "1917" },
@@ -26,6 +27,21 @@ export default function TrendingSwiper() {
     { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
     { image: require("../movie-posters/1917.jpg"), title: "1917" },
   ]);
+  useEffect(() => {
+    if (!apiEnabled) return;
+    fetchTrending()
+      .then((items) => {
+        if (!items.length) return;
+        // Repeat the list to fill 15 slides, matching the bundled layout.
+        setImages(
+          Array.from({ length: 15 }, (_, i) => {
+            const item = items[i % items.length];
+            return { image: item.poster, title: item.title };
+          })
+        );
+      })
+      .catch((err) => console.warn("Using bundled trending list:", err.message));
+  }, []);
   return (
     <Swiper
       navigation={true}
