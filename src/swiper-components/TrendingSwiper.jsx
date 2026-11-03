@@ -11,21 +11,21 @@ import { apiEnabled, fetchTrending } from "../api";
 
 export default function TrendingSwiper() {
   const [images, setImages] = useState([
-    { image: require("../movie-posters/joker.jpg"), title: "The Joker" },
-    { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
+    { image: require("../movie-posters/dune.jpg"), title: "Dune" },
+    { image: require("../movie-posters/oppenheimer.jpg"), title: "Oppenheimer" },
+    { image: require("../movie-posters/interstellar.jpg"), title: "Interstellar" },
+    { image: require("../movie-posters/spiderverse.jpg"), title: "Spider-Man: Spider-Verse" },
+    { image: require("../movie-posters/bladerunner.jpg"), title: "Blade Runner 2049" },
+    { image: require("../movie-posters/inception.jpg"), title: "Inception" },
+    { image: require("../movie-posters/joker.jpg"), title: "Joker" },
     { image: require("../movie-posters/1917.jpg"), title: "1917" },
+    { image: require("../movie-posters/madmax.jpg"), title: "Mad Max: Fury Road" },
+    { image: require("../movie-posters/johnwick.jpg"), title: "John Wick" },
+    { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
     { image: require("../movie-posters/wars.jpg"), title: "Star Wars" },
-    { image: require("../movie-posters/joker.jpg"), title: "The Joker" },
-    { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
-    { image: require("../movie-posters/1917.jpg"), title: "1917" },
-    { image: require("../movie-posters/wars.jpg"), title: "Star Wars" },
-    { image: require("../movie-posters/joker.jpg"), title: "The Joker" },
-    { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
-    { image: require("../movie-posters/1917.jpg"), title: "1917" },
-    { image: require("../movie-posters/wars.jpg"), title: "Star Wars" },
-    { image: require("../movie-posters/joker.jpg"), title: "The Joker" },
-    { image: require("../movie-posters/Hobbit.jpg"), title: "The Hobbit" },
-    { image: require("../movie-posters/1917.jpg"), title: "1917" },
+    { image: require("../movie-posters/darkknight.jpg"), title: "Dark Knight" },
+    { image: require("../movie-posters/300.jpg"), title: "300" },
+    { image: require("../movie-posters/thething.jpg"), title: "The Thing" },
   ]);
   useEffect(() => {
     if (!apiEnabled) return;

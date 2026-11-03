@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# StreamFlow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A movie-browsing UI I built with React. You can scroll through movies, open one to see its details and watch the trailer. It's a portfolio project, not a real streaming service.
 
-## Available Scripts
+Live demo: https://shehatacs2019102.github.io/StreamingService
 
-In the project directory, you can run:
+## What's in here
 
-### `npm start`
+- **Frontend** (project root): React 19 (Create React App), React Router, Swiper and styled-components.
+- **Backend** ([server/](server/)): a small Express API that serves the movie list, the trending titles and the poster images.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The frontend doesn't need the backend. If no API URL is set, it uses the movie data bundled with the app. That's how the GitHub Pages version runs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Running it locally
 
-### `npm test`
+You'll need Node 20 or newer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend only
 
-### `npm run build`
+```bash
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This opens http://localhost:3000 and uses the bundled data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend + API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install the server's dependencies once:
 
-### `npm run eject`
+```bash
+npm install --prefix server
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Create a `.env.development.local` file in the project root that points the app at the API:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+REACT_APP_API_URL=http://localhost:4000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Then run these in two terminals:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run server   # API on http://localhost:4000, restarts when you change a file
+npm start        # React app on http://localhost:3000
+```
 
-## Learn More
+The movie page and the trending slider now load from the API. If the API is down, they go back to the bundled data and log a warning in the console.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## The API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Method | Path                    | What it does                                       |
+| ------ | ----------------------- | -------------------------------------------------- |
+| GET    | `/api/health`           | Returns `{ "status": "ok" }`                       |
+| GET    | `/api/movies?genre=&q=` | All movies. Filter by genre or search the title and description |
+| GET    | `/api/movies/:id`       | One movie, or a 404                                |
+| GET    | `/api/genres`           | List of genres                                     |
+| GET    | `/api/trending`         | Titles for the trending slider                     |
+| GET    | `/posters/:file`        | Poster images                                      |
 
-### Code Splitting
+The movie data is stored in [server/src/data/movies.js](server/src/data/movies.js). The posters are served directly from `src/movie-posters`, so the frontend and the API use the same image files.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The server reads two environment variables:
 
-### Analyzing the Bundle Size
+- `PORT`: the port the API listens on. The default is `4000`.
+- `CORS_ORIGIN`: a comma-separated list of sites allowed to call the API, e.g. `https://shehatacs2019102.github.io`. If it isn't set, any site can call it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+See [server/README.md](server/README.md) for more on the server.
 
-### Making a Progressive Web App
+## Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm test                  # frontend
+npm test --prefix server  # API
+```
 
-### Advanced Configuration
+## Deploying
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The frontend is hosted on GitHub Pages from the `gh-pages` branch. If you host the API somewhere too, set `REACT_APP_API_URL` to its address when you build:
 
-### Deployment
+```bash
+REACT_APP_API_URL=https://your-api.example.com npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you leave it unset, the build uses the bundled data, as it does now.

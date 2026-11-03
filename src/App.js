@@ -7,7 +7,7 @@ import styled from "styled-components";
 import BottomBar from "./components/BottomBar";
 import MiniHeader from "./components/MiniHeader";
 import IntroPage from "./layout/IntroPage";
-import poster from "./movie-posters/300.jpg"
+import poster from "./movie-posters/300.jpg";
 import MovieModal from "./sub-components-movie-page/MovieModal";
 
 const Container = styled.div`
@@ -15,34 +15,44 @@ const Container = styled.div`
   flex-flow: row nowrap;
   height: 100vh;
   width: 100vw;
-  background: ${(props)=>{return `url(${props.moviePoster})`}};
-  background-repeat:no-repeat;
-  background-size:cover;
+  overflow: hidden;
+  background: ${(props) =>
+    `linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.15) 100%), url(${props.moviePoster})`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   @media (max-width: 750px) {
     flex-flow: column wrap;
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 `;
 const Holder = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-flow: column nowrap;
-  gap: 100px;
+  gap: 24px;
   height: 100vh;
   width: calc(100vw - 80px);
-  overflow: hidden;
+  padding: 12px 0 20px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @media (min-height: 920px) and (min-width: 1025px) {
+    justify-content: flex-start;
+    gap: 64px;
+  }
+  @media (max-height: 820px) and (min-width: 751px) {
+    gap: 10px;
+    padding: 6px 0 12px 0;
+  }
   @media (max-width: 750px) {
     width: 100%;
     height: auto;
     overflow: visible;
-  }
-  @media (max-width:1024px) and (min-height:600px) {
-    gap:30px;
-  }
-  @media (max-width:1024px) and (min-height:800px) {
-    gap:60px;
-  }
-  @media (min-width:1025px) and (max-height:1000px) {
-    gap:20px;
+    padding: 0;
   }
 `;
 function App() {

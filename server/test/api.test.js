@@ -17,7 +17,7 @@ test("lists all movies with absolute poster URLs", async () => {
   const res = await fetch(`${base}/api/movies`);
   assert.equal(res.status, 200);
   const movies = await res.json();
-  assert.equal(movies.length, 8);
+  assert.equal(movies.length, 18);
   assert.match(movies[0].poster, /^http:\/\/localhost:\d+\/posters\/300\.jpg$/);
 });
 
@@ -39,7 +39,7 @@ test("returns a single movie or 404", async () => {
 
 test("serves trending list and poster images", async () => {
   const trending = await (await fetch(`${base}/api/trending`)).json();
-  assert.equal(trending.length, 4);
+  assert.equal(trending.length, 12);
 
   const img = await fetch(trending[0].poster);
   assert.equal(img.status, 200);

@@ -23,44 +23,38 @@ const Container = styled.div`
   font-family: "Plus Jakarta Sans", serif;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   color: white;
-  width: calc(100% - 50px);
-  margin-left: 50px;
-  gap: 32px;
-  @media (max-width:400px) and (max-height:882px) {
-    width:auto;
-    height:auto;
-    row-gap: calc(5px + 2vh);
-    margin-top:calc(5px + 2vh );
-    margin-left:calc(5px + 3vw );
+  width: calc(100% - 64px);
+  margin-left: 40px;
+  gap: clamp(10px, 2.2vh, 28px);
+  box-sizing: border-box;
+  @media (max-height: 820px) and (min-width: 751px) {
+    gap: clamp(8px, 1.5vh, 14px);
+    margin-left: 32px;
+    width: calc(100% - 48px);
   }
-  @media (max-width:768px) and (min-height:844px) {
-    width:auto;
-    height:auto;
-    row-gap: calc(10px + 3vh);
-    margin-top:calc(10px + 6vh);
-    margin-left:calc(5px + 3vw);
-  }
-  @media (max-width:768px) and (min-height:1024px) {
-    width:100vw;
+  @media (max-width: 750px) {
+    width: auto;
     height: auto;
-    margin-top:30px;
-    gap: 45px;
+    row-gap: calc(8px + 2vh);
+    margin-top: calc(8px + 2vh);
+    margin-left: calc(8px + 3vw);
+    margin-right: calc(8px + 3vw);
+  }
+  @media (max-width: 768px) and (min-height: 1024px) {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    gap: 36px;
     margin-left: 23px;
   }
-  @media (max-width:1024px) and (min-height:1366px) {
-    width:100vw;
+  @media (max-width: 1024px) and (min-height: 1366px) {
+    width: 100%;
     height: auto;
-    margin-top:80px;
-    gap: 50px;
-    margin-left: 53px;
-  }
-  @media (max-width:1024px) and (min-height:600px) {
-    gap:12px;
-  }
-  @media (max-width:1024px) and (min-height:800px) {
-    gap:20px;
+    margin-top: 60px;
+    gap: 44px;
+    margin-left: 40px;
   }
 `;
 
@@ -72,9 +66,9 @@ function truncateDescription(text, maxLength) {
 
 export default function MoviePage(props) {
   const [movieTitle, setMovieTitle] = useState("300");
-  const [movieDescription, setMovieTDescription] = useState("based on the 1998 Dark Horse comic book limited series of the same name by Frank Miller and Lynn Varley. The film, like its source material, is a fictionalized retelling of the Battle of Thermopylae in the Greco-Persian Wars. The plot revolves around King Leonidas (Gerard Butler)");
-  const [movieRating, setMovieRating] = useState(4.9);
-  const [movieDate, setMovieDate] = useState(2008);
+  const [movieDescription, setMovieTDescription] = useState("Based on the 1998 Dark Horse comic book limited series by Frank Miller and Lynn Varley, 300 is a fictionalized retelling of the Battle of Thermopylae in the Greco-Persian Wars, following King Leonidas (Gerard Butler) as he leads 300 Spartans against the Persian god-king Xerxes.");
+  const [movieRating, setMovieRating] = useState(4.8);
+  const [movieDate, setMovieDate] = useState(2006);
   const [movieGenre, setMovieGenre] = useState("action")
   const {setMoviePoster,setMovieTrailer,setModalState}=props;
   const stars = [];
@@ -100,7 +94,7 @@ export default function MoviePage(props) {
         </DesktopScreenMovieRating>
         <SmallScreenMovieRating>
           <img src={star} alt="" />
-          4.8
+          {movieRating}
         </SmallScreenMovieRating>
       </MovieDetails>
       <MovieDescription>

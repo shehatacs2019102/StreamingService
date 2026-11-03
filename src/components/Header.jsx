@@ -10,9 +10,16 @@ const Container = styled.div`
   color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-flow: row wrap;
-  width: calc(100vw - 100px);
-  padding: 0px 10px;
+  width: 100%;
+  padding: 0px 32px 0px 10px;
+  box-sizing: border-box;
+  @media (max-height: 820px) {
+    ul {
+      margin: 8px 0;
+    }
+  }
   @media (max-width: 750px) {
     display: none;
     height: 0;

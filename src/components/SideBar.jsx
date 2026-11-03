@@ -13,14 +13,16 @@ import LogoHolder from "../sub-componenets-side-action-bar/LogoHolder.jsx";
 import IconHolder from "../sub-componenets-side-action-bar/IconHolder.jsx";
 
 const Container = styled.div`
-  height: calc(100vh - 20px);
+  height: 100vh;
   width: 80px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   background-color: #1e293b;
-  padding: 10px 0px;
+  padding: 12px 0px;
+  box-sizing: border-box;
   z-index: 120;
   @media (max-width: 750px) {
     display: none;
@@ -28,10 +30,17 @@ const Container = styled.div`
   }
 `;
 
+const TopGroup = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: clamp(4px, 1.2vh, 10px);
+`;
+
 export default function SideBar() {
   return (
     <Container>
-      <div style={{ display: "flex", flexFlow: "column wrap", gap: "10px" }}>
+      <TopGroup>
         <LogoHolder>
           <Logo src={logo} alt="" />
         </LogoHolder>
@@ -53,7 +62,7 @@ export default function SideBar() {
         <IconHolder>
           <img src={notification} alt="" />
         </IconHolder>
-      </div>
+      </TopGroup>
       <IconHolder>
         <img src={settings} alt="" />
       </IconHolder>

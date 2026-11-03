@@ -1,21 +1,35 @@
-.movieSwiper{
-  width: calc(100% - 50px);
-  height: 240px;
+.movieSwiper {
+  width: 100%;
+  height: 244px;
+  padding-top: 8px !important;
   margin: 0px !important;
   display: flex !important;
   position: relative !important;
-  overflow-y:visible !important;
+  overflow-y: visible !important;
+  box-sizing: border-box;
 }
 
 .movieSwiperSlide {
   text-align: center;
   font-size: 18px;
-  height: 240px !important;
+  height: 200px !important;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 24px;
   position: relative;
+  cursor: pointer;
+  opacity: 0.65;
+  transform: scale(0.93);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.movieSwiperSlide.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  border: 2px solid #ffba08;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
 }
 
 .movieSwiperImage {
@@ -23,26 +37,78 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 22px;
 }
+
 .movieSwiperSlide h3 {
   z-index: 10;
   position: absolute;
-  align-self: flex-end;
-  margin-left: 20px;
-  margin-top: 520px;
+  left: 20px;
+  right: 16px;
+  bottom: 16px;
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
-.swiper-pagination-horizontal{
+
+.movieSwiper .swiper-pagination-horizontal {
   position: absolute !important;
-  left: 47%!important;
-  bottom:0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 2px !important;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 20;
 }
-@media (min-width: 300px) and (max-width:750px) {
 
+.movieSwiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  opacity: 1;
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.movieSwiper .swiper-pagination-bullet-active {
+  width: 26px;
+  background: #ffba08;
+}
+
+@media (max-height: 820px) and (min-width: 751px) {
+  .movieSwiper {
+    height: clamp(168px, 26vh, 206px) !important;
+  }
+
+  .movieSwiperSlide {
+    height: clamp(134px, 21vh, 170px) !important;
+    border-radius: 18px;
+  }
+
+  .movieSwiperImage {
+    border-radius: 16px;
+  }
+
+  .movieSwiperSlide h3 {
+    font-size: 15px;
+    left: 14px;
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 750px) {
   .movieSwiperSlide {
     text-align: center;
     font-size: 18px;
-    height: 172px !important;
+    height: 154px !important;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -52,7 +118,7 @@
 
   .movieSwiper {
     width: 90vw !important;
-    height: 173px !important;
+    height: 166px !important;
     overflow-y: hidden;
   }
 
@@ -61,32 +127,21 @@
     height: 0px;
   }
 
-  .swiper-pagination-horizontal{
+  .movieSwiper .swiper-pagination-horizontal {
     display: none;
-    height:0;
+    height: 0;
   }
 }
-@media (max-width:1024px) and (min-height:600px) {
+
+@media (min-width: 751px) and (max-width: 1024px) {
   .movieSwiperSlide {
-    text-align: center;
-    font-size: 18px;
-    height: 172px !important;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    height: clamp(144px, 20vh, 168px) !important;
     border-radius: 16px;
-    position: relative;
   }
 
   .movieSwiper {
-    width: 90vw !important;
-    height: 173px !important;
+    width: 100% !important;
+    height: clamp(176px, 25vh, 202px) !important;
     overflow-y: hidden;
   }
-
-  .movieSwiperSlide h3 {
-    display: none;
-    height: 0px;
-  }
-
 }
