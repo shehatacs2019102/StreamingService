@@ -26,15 +26,27 @@ const Container = styled.div`
   }
 `;
 
-export default function Header() {
+const menu = [
+  { id: "home", label: "Home" },
+  { id: "browse", label: "Browse" },
+  { id: "kids", label: "Kids" },
+  { id: "support", label: "Support" },
+  { id: "faq", label: "FAQ" },
+];
+
+export default function Header({ view, setView }) {
   return (
     <Container>
       <HeaderList>
-        <HeaderListItem>Home</HeaderListItem>
-        <HeaderListItem>Browse</HeaderListItem>
-        <HeaderListItem>Kids</HeaderListItem>
-        <HeaderListItem>Support</HeaderListItem>
-        <HeaderListItem>FAQ</HeaderListItem>
+        {menu.map((item) => (
+          <HeaderListItem
+            key={item.id}
+            active={view === item.id}
+            onClick={() => setView(item.id)}
+          >
+            {item.label}
+          </HeaderListItem>
+        ))}
       </HeaderList>
       <div
         style={{
@@ -44,8 +56,24 @@ export default function Header() {
           gap: "5px",
         }}
       >
-        <HeaderPanelButton src={search} alt="" />
-        <HeaderPanelButton src={user} alt="" />
+        <HeaderPanelButton
+          type="button"
+          title="Search"
+          aria-label="Search"
+          $active={view === "search"}
+          onClick={() => setView("search")}
+        >
+          <img src={search} alt="" />
+        </HeaderPanelButton>
+        <HeaderPanelButton
+          type="button"
+          title="Profile"
+          aria-label="Profile"
+          $active={view === "profile"}
+          onClick={() => setView("profile")}
+        >
+          <img src={user} alt="" />
+        </HeaderPanelButton>
       </div>
     </Container>
   );

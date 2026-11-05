@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
 const GetStartedButton = styled.button`
-  width: 160px;
-  height: 45px;
-  background: linear-gradient(to right, #628eff, #8740cd 53%, #580475);
+  height: 50px;
+  padding: 0 30px;
+  background: #e5262c;
   border-style: none;
   color: white;
-  padding: 10px 14px;
-  font-size: 22px;
-  font-weight: 600;
-  border-radius: 1px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  &:hover {
+    background: #ff3b41;
+    transform: translateY(-1px);
+  }
 `;
 export default GetStartedButton;

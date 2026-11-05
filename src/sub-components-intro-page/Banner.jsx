@@ -1,29 +1,23 @@
 import styled from "styled-components";
-import background from "../assets/intro-page-background.jpg";
 
 const Banner = styled.div`
   color: white;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
+  flex-shrink: 0;
   width: 100%;
-  height: 100%;
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -2;
-    background-image: url(${background});
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    filter: brightness(0.6);
-  }
+  min-height: calc(100vh - 40px);
+  box-sizing: border-box;
+  padding-bottom: 40px;
+  background: radial-gradient(
+      55% 65% at 76% 50%,
+      rgba(229, 38, 44, 0.24),
+      rgba(229, 38, 44, 0) 72%
+    ),
+    #0b0506;
   @media (max-width: 800px) {
-    height: 30%;
+    min-height: 0;
   }
 `;
 export default Banner;

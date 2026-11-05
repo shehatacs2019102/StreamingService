@@ -3,23 +3,25 @@ import styled from "styled-components";
 const DropDownButton = styled.button`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: start;
-  padding: 24px;
+  padding: 20px 4px;
   width: 100%;
   color: white;
-  background-color: #141c3b;
-  font-size: 26px;
-  margin-bottom: 3px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
   border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: none;
-  border-radius: 0px;
+  cursor: pointer;
+  transition: color 0.2s ease;
   &:hover {
-    background-color: #202c5f;
-    transition: 1s;
+    color: #ff5a5f;
   }
   @media (max-width: 690px) {
-    padding: 18px;
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 

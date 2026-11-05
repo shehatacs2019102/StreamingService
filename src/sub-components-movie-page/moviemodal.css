@@ -7,7 +7,7 @@
     z-index: 100;
     width:100vw;
     height: 100vh;
-    background: linear-gradient(rgba(29, 39, 87, 0.459),rgba(153, 112, 172, 0.438));
+    background: linear-gradient(rgba(40, 6, 10, 0.6),rgba(143, 17, 24, 0.45));
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
@@ -24,7 +24,7 @@
     align-items: center;
     font-size: 1.2rem;
     font-weight: 400;
-    background-color: rgba(103, 92, 205, 0.568);
+    background-color: rgba(229, 38, 44, 0.6);
     border:0;
     color:rgba(255, 255, 255, 0.767);
     border-top-left-radius: 12px;

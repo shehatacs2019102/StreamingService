@@ -5,13 +5,10 @@ const IntroStudioPresentation = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 50px;
+  align-items: stretch;
+  gap: 16px;
+  margin-bottom: 40px;
   @media (max-width: 800px) {
-    flex-wrap: wrap;
-  }
-  @media (max-width: 690px) {
     flex-wrap: wrap;
   }
 `;

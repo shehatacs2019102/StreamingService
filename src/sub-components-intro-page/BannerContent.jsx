@@ -3,11 +3,9 @@ import styled from "styled-components";
 const BannerContent = styled.div`
   color: white;
   display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  margin-top: 20vh;
-  @media (max-width: 800px) {
-    margin-top: 6vh;
-  }
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
 `;
 export default BannerContent;

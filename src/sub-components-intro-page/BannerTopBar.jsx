@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 const BannerTopBar = styled.div`
   display: flex;
-  width: 80%;
+  width: 86%;
   justify-content: space-between;
-  height: 5.5rem;
-  padding-top: 30px;
+  padding-top: 28px;
 `;
 
 export default BannerTopBar;

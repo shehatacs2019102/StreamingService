@@ -1,5 +1,5 @@
 .bg-holder {
-  background: #000000;
+  background: #0b0506;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -23,19 +23,19 @@
 
 .shape-blob {
   width: 100%;
-  background: #628eff;
+  background: #ff5a5f;
   height: 300px;
   width: 400px;
   border-radius: 40% 50% 30% 40%;
   animation: transform 18s ease-in-out infinite both alternate,
     movement_one 12s ease-in-out infinite both;
-  opacity: 0.7;
+  opacity: 0.3;
   position: absolute;
   left: 75%;
   top: 40%;
 }
 .shape-blob.one {
-  background: #8740cd;
+  background: #e5262c;
   height: 150px;
   width: 200px;
   left: 10px;

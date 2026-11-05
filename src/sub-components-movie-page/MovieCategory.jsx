@@ -4,7 +4,7 @@ import MovieInfo from "./MovieInfo";
 const MovieCategory = styled(MovieInfo)`
   border-style: solid;
   border-width: 1px;
-  border-color: #cbd5e1;
+  border-color: #f0d6d6;
   border-radius: 1234px;
   padding: 6px 12px;
   font-family: "Plus Jakarta Sans", serif;

@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const Logo = styled.img`
   width: ${(props) => {
-    return props.type === "Banner" ? "100px" : "32px";
+    return props.type === "Banner" ? "56px" : "32px";
   }};
   height: ${(props) => {
-    return props.type === "Banner" ? "100px" : "32px";
+    return props.type === "Banner" ? "56px" : "32px";
   }};
   gap: 5px;
   border-radius: ${(props) => {
@@ -17,14 +17,14 @@ const Logo = styled.img`
       return props.type === "mini"
         ? "32px"
         : props.type === "Banner"
-        ? "80px"
+        ? "48px"
         : "24px";
     }};
     height: ${(props) => {
       return props.type === "mini"
         ? "32px"
         : props.type === "Banner"
-        ? "80px"
+        ? "48px"
         : "24px";
     }};
     gap: 3.75px;
@@ -32,12 +32,12 @@ const Logo = styled.img`
   @media (min-width:768px) and (min-height:1024px) {
     width: ${(props) => {
       return props.type === "Banner"
-        ? "80px"
+        ? "48px"
         : "42px";
     }};
     height: ${(props) => {
       return props.type === "Banner"
-        ? "80px"
+        ? "48px"
         : "42px";
     }};
   }

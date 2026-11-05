@@ -28,7 +28,7 @@
 .movieSwiperSlide.swiper-slide-active {
   opacity: 1;
   transform: scale(1);
-  border: 2px solid #ffba08;
+  border: 2px solid #e5262c;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
 }
 
@@ -79,7 +79,7 @@
 
 .movieSwiper .swiper-pagination-bullet-active {
   width: 26px;
-  background: #ffba08;
+  background: #e5262c;
 }
 
 @media (max-height: 820px) and (min-width: 751px) {

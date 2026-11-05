@@ -19,11 +19,19 @@ const Container = styled.div`
   }
 `;
 
-export default function Miniheader() {
+export default function Miniheader({ view, setView }) {
   return (
     <Container>
       <Logo src={logo} type="mini" alt="" />
-      <HeaderPanelButton src={search} alt="" />
+      <HeaderPanelButton
+        type="button"
+        title="Search"
+        aria-label="Search"
+        $active={view === "search"}
+        onClick={() => setView("search")}
+      >
+        <img src={search} alt="" />
+      </HeaderPanelButton>
     </Container>
   );
 }

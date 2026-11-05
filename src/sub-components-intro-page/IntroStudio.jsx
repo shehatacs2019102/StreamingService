@@ -6,10 +6,11 @@ const IntroStudio = styled.div`
   height: 100%;
   justify-content: flex-start;
   align-items: center;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   color: white;
   z-index: 1;
   position: relative;
+  padding-bottom: 64px;
 `;
 
 export default IntroStudio;

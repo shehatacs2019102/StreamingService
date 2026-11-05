@@ -16,6 +16,7 @@ import MovieDescription from "../sub-components-movie-page/MovieDescription.jsx"
 import DesktopScreenMovieRating from "../sub-components-movie-page/DesktopScreenRating.jsx";
 import SmallScreenMovieRating from "../sub-components-movie-page/SmallScreenMovieRating.jsx";
 import MoviePagePanel from "../sub-components-movie-page/MoviePagePanel.jsx";
+import MyListButton from "../sub-components-movie-page/MyListButton.jsx";
 import MoviePageSwiper from "../swiper-components/MoviePageSwiper.jsx";
 
 const Container = styled.div`
@@ -70,7 +71,8 @@ export default function MoviePage(props) {
   const [movieRating, setMovieRating] = useState(4.8);
   const [movieDate, setMovieDate] = useState(2006);
   const [movieGenre, setMovieGenre] = useState("action")
-  const {setMoviePoster,setMovieTrailer,setModalState}=props;
+  const {setMoviePoster,setMovieTrailer,setModalState,movies,request,autoplay,active,myList,toggleMyList}=props;
+  const saved = myList.includes(movieTitle);
   const stars = [];
   for (let i = 0; i < Math.floor(movieRating); i++) {
     stars.push(<img key={i} src={star} alt="star" />);
@@ -103,8 +105,11 @@ export default function MoviePage(props) {
       <MoviePagePanel>
         <img src={play} onClick={()=>{setModalState(true)}} alt="" />
         <img src={moreinfo} alt="" />
+        <MyListButton $saved={saved} aria-pressed={saved} onClick={()=>{toggleMyList(movieTitle)}}>
+          {saved ? "✓ In My List" : "+ My List"}
+        </MyListButton>
       </MoviePagePanel>
-      <MoviePageSwiper setMoviePoster={setMoviePoster} setMovieTitle={setMovieTitle}  setMovieTrailer={setMovieTrailer} setMovieTDescription={setMovieTDescription} setMovieRating={setMovieRating} setMovieDate={setMovieDate} setMovieGenre={setMovieGenre}/>
+      <MoviePageSwiper movies={movies} request={request} autoplay={autoplay} active={active} setMoviePoster={setMoviePoster} setMovieTitle={setMovieTitle}  setMovieTrailer={setMovieTrailer} setMovieTDescription={setMovieTDescription} setMovieRating={setMovieRating} setMovieDate={setMovieDate} setMovieGenre={setMovieGenre}/>
     </Container>
       );
 }
